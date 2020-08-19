@@ -12,7 +12,7 @@ For a more in-depth look at Vault on Kubernetes, take a look at the [official va
 
 1. [Getting k3s](k3s_install.md)
 2. [Installing Vault in dev mode](vault_install.md)
-3. Creating a simple KV secret
+3. [Creating a simple KV secret](kv_secret/intro.md)
     - [Web UI](kv_secret/web_ui.md)
     - Command line
     - API
