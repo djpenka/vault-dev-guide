@@ -8,4 +8,4 @@ The secret engine also has version control, which can be used to access previous
 
 There are two types of deletion: `delete` and `destroy`. The `delete` command will perform a soft delete, mark the version as deleted and populate a `deletion_time` timestamp. This doesn't remove the underlying version data from storage, and allows for undeletion by using `undelete`. On the other hand, `destroy` cannot be undeleted.
 
-## [Further reading]([https://link](https://www.vaultproject.io/docs/secrets/kv/kv-v2))
+## [Further reading](https://www.vaultproject.io/docs/secrets/kv/kv-v2)
