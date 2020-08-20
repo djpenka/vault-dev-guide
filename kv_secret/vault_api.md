@@ -4,6 +4,8 @@ For every request to the API, we will need a header `X-Vault-Token: ...`. Becaus
 
 Documentation for each of the queries made here can be found in the [vault kv-v2 api docs](https://www.vaultproject.io/api-docs/secret/kv/kv-v2)
 
+## Add a file
+
 First, add a file named `my-secret` under the path `secret/database/`. In this path, `secret/` refers to the secret engine we are using, and `database/` is a subpath in that engine, where our file `my-secret` will be stored.
 
 ```bash
@@ -16,6 +18,8 @@ curl \
 
 The breakdown of this request URL is `${domain}:8200/v1/${secret_engine_path}/data/${path_to_file}/${file}`. This is similar with all other requests in the kv-v2 engine api.
 
+## List Secrets in a path
+
 Now we can see our file listed under the path `database/` in the `secret/` engine using the following command to list all secrets in that path.
 
 ```bash
@@ -25,7 +29,9 @@ curl \
     http://localhost:8200/v1/secret/metadata/database/ | jq
 ```
 
-Then, we can read our secret values back. If version is not set, it defaults to the latest version
+## Get a secrets file
+
+If version is not set, it defaults to the latest version.
 
 ```bash
 curl \
