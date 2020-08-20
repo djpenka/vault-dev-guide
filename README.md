@@ -12,8 +12,9 @@ For a more in-depth look at Vault on Kubernetes, take a look at the [official va
 
 1. [Getting k3s](k3s_install.md)
 2. [Installing Vault in dev mode](vault_install.md)
-3. [Creating a simple KV secret](kv_secret/intro.md)
+3. [Secrets Engines](secrets_engines.md)
+4. [Create a KV secret with the kv_v2 engine](kv_secret/intro.md)
     - [Web UI](kv_secret/web_ui.md)
-    - Command line
-    - API
-4. Injecting secrets with Vault Helm Sidecar
+    - [Command line](kv_secret/vault_cli.md)
+    - [API](kv_secret/vault_api.md)
+5. Injecting secrets with Vault Helm Sidecar

@@ -2,7 +2,7 @@
 
 ## Features
 
-The KV v2 Secret engine allows for the creation of arbitrary key-value entries. By default, it is enabled and accessable at the `secrets/` path, but other paths can also be created for it. Each secret that is stored in it has an associated path, separated by forward slashes, for example `secrets/database/admin_auth`. Multiple secrets can be associated with a single path, for example, in the `secrets/database/admin_auth` path we can have a `username` key and a `password` key.
+The kv-v2 Secret engine allows for the creation of arbitrary key-value entries stored in files. By default, it is enabled and accessable at the `secrets/` endpoint. Each secret file that is stored in it has an associated path such as `database/admin_auth`, and can store multiple secrets. For example, in the `database/admin_auth` path we can have a file named `my_auth` with two entries: `username=admin` and `password=my_pass`.
 
 The secret engine also has version control, which can be used to access previous versions of the data.
 
