@@ -17,4 +17,4 @@ For a more in-depth look at Vault on Kubernetes, take a look at the [official va
     - [Web UI](kv_secret/web_ui.md)
     - [Command line](kv_secret/vault_cli.md)
     - [API](kv_secret/vault_api.md)
-5. Injecting secrets with Vault Helm Sidecar
+5. [Injecting secrets with Vault Helm Sidecar](inject_sidecar.md)
