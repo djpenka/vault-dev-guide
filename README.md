@@ -10,6 +10,8 @@ For a more in-depth look at Vault on Kubernetes, take a look at the [official va
 
 ## Table of Contents
 
+### Using Vault
+
 1. [Getting k3s](k3s_install.md)
 2. [Installing Vault in dev mode](vault_install.md)
 3. [Secrets Engines](secrets_engines.md)
@@ -18,3 +20,7 @@ For a more in-depth look at Vault on Kubernetes, take a look at the [official va
     - [Command line](kv_secret/vault_cli.md)
     - [API](kv_secret/vault_api.md)
 5. [Injecting secrets with Vault Helm Sidecar](inject_sidecar.md)
+
+### Integrating Vault with Jenkins
+
+1. [Installing a local Jenkins instance](jenkins_install.md)
