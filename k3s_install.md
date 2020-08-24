@@ -5,19 +5,16 @@
 The fastest way to install k3s is by using the provided install script. To use this, run the below command.
 
 ```bash
-# If not creating a kubeconfig file
-curl -sfL https://get.k3s.io | sh -s - --write-kubeconfig-mode 644
-
-# If creating a kubeconfig file
 curl -sfL https://get.k3s.io | sh -
 ```
 
-**Note:** `--write-kubeconfig-mode` allows us to not need to create a `~/.kube/config` file, but will be readable by anyone as a result. If you would like to preserve this file's secrecy, do the following:
+Now we need to move the default kubeconfig file to our own `~/.kube/config` file. If you already have a `~/.kube/config` file, then integrate the file at `/etc/rancher/k3s/k3s.yaml` into your own kubeconfig file. Otherwise, run the below commands.
 
 ```bash
-# Create kubeconfig file
+# Create kubeconfig file and give ownership to current user
 mkdir ~/.kube
 sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
+sudo chown -R $USER ~/.kube
 
 # Append kubeconfig to .bashrc file and export to current shell
 echo "export KUBECONFIG=~/.kube/config" >> ~/.bashrc
@@ -25,6 +22,14 @@ export KUBECONFIG=~/.kube/config
 ```
 
 Now we have a k3s instance running on our host machine.
+
+## Installing helm
+
+Installing helm should be easy, just run the following command. If there is an error, ensure that you have created `~/.kube/config`, have set `KUBECONFIG=~/.kube/config`, and that the current user owns `~/.kube/config`.
+
+```bash
+curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+```
 
 ## Uninstalling k3s
 
