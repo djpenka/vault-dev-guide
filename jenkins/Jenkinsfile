@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Test') {
+            steps {
+                script {
+                    def secrets = [
+                        [path: 'secret/database/auth', secretValues: [
+                                [envVar: 'USERNAME', vaultKey: 'username'],
+                                [envVar: 'PASSWORD', vaultKey: 'password']]]
+                    ]
+                    def configuration = [vaultUrl: 'http://vault:8200',
+                                         vaultCredentialId: 'jenkins-vault-token']
+                    withVault([configuration: configuration, vaultSecrets: secrets]) {
+                        sh 'echo $USERNAME'
+                        sh 'expr length $USERNAME'
+                        sh 'echo $PASSWORD'
+                        sh 'expr length $PASSWORD'
+                    }
+                }
+            }
+        }
+    }
+}

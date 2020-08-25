@@ -24,3 +24,4 @@ For a more in-depth look at Vault on Kubernetes, take a look at the [official va
 ### Integrating Vault with Jenkins
 
 1. [Installing a local Jenkins instance](jenkins_install.md)
+2. [Using Vault in Jenkins](vault_in_jenkins.md)
